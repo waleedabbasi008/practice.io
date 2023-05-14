@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    transition: all 0.5s ease-in-out;
+}
+
+body:hover {
+    .navbar {
+        display: flex;
+    }
+}
+
+// ################################# Navbar styling #############################################
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 40vh;
+    width: fit-content;
+    max-width: 10vw;
+    position: relative;
+    margin-top: 9%;
+    background: blur;
+    color: rgb(188, 180, 170);
+    box-shadow: 5px 5px 15px #a6a1a1;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    display: none;
+    animation: move 1s 1 forwards;
+    position: fixed;
+    z-index: 3;
+
+}
+
+.navbar .logo img {
+    width: 80px;
+    height: 80px;
+    
+    margin-top: 1rem;
+
+
+}
+
+.logo small {
+    margin-top: -6rem;
+}
+
+.navbar .nav-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 12rem;
+    position: absolute;
+    left: -4%;
+
+}
+
+.nav-items,
+.nav-items a {
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: rgb(191, 197, 203);
+
+}
+
+.nav-item {
+    border: 3px solid rgb(105, 105, 181);
+    padding: 0.5rem;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    transition: background 0.5s ease-in-out;
+}
+
+.nav-item:hover {
+    background: rgb(72, 72, 135);
+}
+
+.item1 {
+    transform: rotate(-45deg);
+    animation: rotate 0.5s 1 ease-in-out forwards;
+}
+
+.item4 {
+    transform: rotate(45deg);
+    animation: rotate2 0.5s 1 ease-in-out forwards;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-60deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes rotate2 {
+    0% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+// ################################### Responsive navbar #################################
+@media screen and (max-width:768px) {
+    #hero {
+        width: 100%;
+        border: none;
+    }
+
+    .navbar {
+        background: none;
+        box-shadow: none;
+    }
+
+    .nav-items {
+        margin-left: 20rem;
+    }
+
+    .nav-item {
+        z-index: 3;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 100px;
+
+    }
+
+    .logo {
+        margin-left: 3rem;
+    }
+
+}
+
+// ###################### Hero Section Styling ##########################
+#hero {
+    height: 98.5vh;
+    border: 1px solid transparent;
+    transition: all 1s ease-in-out;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../assets/texture-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#hero:hover {
+    .navbar {
+        display: flex;
+    }
+
+    #hero {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#hero .heroContainer {
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    display: flex;
+    gap: 15rem;
+    height: 70vh;
+
+}
+
+.heroContent {
+    color: #a6a1a1;
+    margin-top: 23rem;
+    text-align: center;
+
+
+}
+
+.heroContent h2 {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 3rem;
+
+}
+
+.heroContent p {
+    font-size: 1.5rem;
+}
+
+.heroImages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: -8rem;
+    column-gap: 8rem;
+border: 2px solid green;
+}
+
+.heroImages img {
+    width: 200px;
+    height: 200px;
+    animation: rot 2s infinite ease-in-out alternate-reverse;
+    box-shadow: 5px 5px 12px #a6a1a1;
+}
+
+@keyframes rot {
+    0% {
+        transform: scaleX(-1);
+    }
+
+    50% {
+        transform: scaleX(-1);
+    }
+
+    75% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+// ################################### About section styling #####################################
+#about {
+    margin-top: 10rem;
+    height: auto;
+    transition: all 0.5s ease-in-out;
+}
+// ################################ About card styling ###################################
+.aboutCards{
+    position: relative;
+}
+.card{
+    width: 100%;
+    outline: none;
+    display: grid;
+    gap: 6rem;
+    column-gap: 1px;
+    grid-template-columns: repeat(3, 1fr);
+    position: absolute;
+    left: 7%;
+    
+
+}
+.card-body{
+    outline: none;
+    width: 55%;
+    background: #a6a1a1;
+}
+.card-body h2 {
+    font-size: 2rem;
+}
+.card-body p{
+    font-size: 1.5rem ;
+}
+.card-body .card-footer img{
+    width: 300px;
+    height: 300px;
+    margin-left: -15px;
+}
+// ############################ Navbar  animation  for all components ######################
+@keyframes move {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 6vw;
+    }
+}
